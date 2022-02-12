@@ -9,6 +9,7 @@ public class RichestCustomerWealth {
             System.out.println();
             for (int j = 0; j < columns; j++) {
 
+
                 sum+=accounts[i][j];
             }
 
