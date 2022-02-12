@@ -26,7 +26,7 @@ public class DegreeOfArray {
             {
                 set.add(nums[WindowEnd]);
             }
-            while(!set.isEmpty())
+            while(!set.isEmpty())          //TO PLACE THE StartWindow Pointer
             {
                 int len=WindowEnd-startWindow+1;
                 res=Math.min(len,res);
