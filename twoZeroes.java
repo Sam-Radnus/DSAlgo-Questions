@@ -8,6 +8,39 @@ public class twoZeroes {
         }
         System.out.println();
     }
+    public static void moveZeroes2(int []nums)
+    {
+        if(nums.length<=1){
+            return;
+        }
+        int totalZeroes=0;
+        int newArr[]=new int[nums.length];
+        int x=0,j=nums.length-1,i=0;
+        for(i=0;i<nums.length;i++)
+        {
+            if(nums[i]==0)
+            {
+                totalZeroes++;
+            }
+        }
+        for(i=0;i<nums.length;i++)
+        {
+            if(nums[i]!=0)
+            {
+                newArr[x]=nums[i];
+                x++;
+            }
+            else{
+                newArr[j]=nums[i];
+                j--;
+            }
+        }
+        for(i=0;i<nums.length;i++)
+        {
+            nums[i]=newArr[i];
+        }
+
+    }
     public static void moveZeroes(int[] nums) {
         if(nums.length<=1){
             return;
@@ -44,7 +77,7 @@ public class twoZeroes {
     {
          int ar[]={0,1,0,3,12};
          printArray(ar);
-         moveZeroes(ar);
+         moveZeroes2(ar);
          printArray(ar);
     }
 }
