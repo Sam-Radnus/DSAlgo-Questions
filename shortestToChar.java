@@ -20,10 +20,11 @@ public class shortestToChar {
             }
             ans[i]=Math.min(ans[i],prev);
         }
+        return 'c';
     }
     public static void main(String args[])
     {
-       System.out.println(shortestLength("loveleetcode",'e'));
+      // System.out.println(shortestLength("loveleetcode",'e'));
 
     }
 }
