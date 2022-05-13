@@ -58,7 +58,7 @@ public class Rat_in_a_Maze {
         }
 
      }
-    public static int main(String args[])
+    public static void main(String args[])
     {
 
     }
