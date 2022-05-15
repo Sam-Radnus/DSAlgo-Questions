@@ -3,7 +3,7 @@ import java.util.Collections;
 
 public class Rat_in_a_Maze_II {
     static ArrayList<String>ans=new ArrayList<>();
-    static boolean visited[][]=new boolean[][];
+    static boolean visited[][]=new boolean[5][5];
     public static ArrayList<String> findPath(int m[][],int n)
     {
         visited=new boolean[n][n];
