@@ -1,37 +1,37 @@
 public class SpiralMatrixIII {
-    public int[][] spiralMatrixIII(int R, int C, int r0, int c0) {
-        int dr[]=new int []{0,1,0,-1};  //direction row
-        int dc[]=new int []{1,0,-1,0};  //direction column
+    public static int[][] spiralMatrixIII(int rows, int cols, int rStart, int cStart) {
+        int matrix[][]=new int[rows][cols];
+        int dr[]=new int[]{0,1,0,-1};
+        int dc[]=new int[]{1,0,-1,0};
 
-        int ans[][]=new int[R*C][2];  //co ordinates
-        int t=0;
+        int test=0;
+        int ans[][]=new int[rows*cols][2];
+        if(ans.length==1)
+        {return ans;}
+        int dk=0;
+        ans[test++]=new int[]{rStart,cStart};
 
-        ans[t++]=new int[]{r0,c0};
-        if(R*C == 1) return ans;
-
-        for(int k=1;k<2*(R+C);k+=2)  //2*(R+C) just to make sure the spiral ends outside of the bounds or the defined grid area
+        for(int k=1;k<2*(rows+cols);k+=2)
         {
-            for(int i=0;i<4;i++) //i determines the direction
+            for(int i=0;i<4;i++)
             {
-                int dk=k+(i/2); //number of steps in this direction
+                dk=k+(i/2);
                 for(int j=0;j<dk;j++)
                 {
-                    r0+=dr[i];
-                    c0+=dc[i];
-                    if( 0<=r0 && r0 < R && 0<=c0 && c0<C)
+                    rStart+=dr[i];
+                    cStart+=dc[i];
+                    if(0<=rStart && 0<=cStart && rStart<rows && cStart<cols)
                     {
-                        ans[t++]=new int[]{r0,c0};
-                        if(t==R*C) return ans;
+                        ans[test++]=new int[]{rStart,cStart};
+                        if(test==(rows*cols)){return ans;}
                     }
                 }
             }
         }
         throw null;
-
     }
     public static void main(String args[])
     {
-
 
     }
 }
