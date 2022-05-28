@@ -20,6 +20,7 @@ public class shortestToChar {
             }
             ans[i]=Math.min(ans[i],prev);
         }
+        return prev;
     }
     public static void main(String args[])
     {
