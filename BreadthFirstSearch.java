@@ -37,6 +37,9 @@ public class BreadthFirstSearch {
             }
         }
     }
+    public void DFS(int s){
+
+    }
     public static void main(String []args)
     {
         BreadthFirstSearch g = new BreadthFirstSearch(4);
