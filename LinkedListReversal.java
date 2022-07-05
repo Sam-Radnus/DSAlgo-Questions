@@ -1,4 +1,4 @@
-class ListNode {
+/*class ListNode {
       int val;
       ListNode next;
       ListNode() {}
@@ -23,3 +23,5 @@ public class LinkedListReversal {
 
     }
 }
+
+ */
