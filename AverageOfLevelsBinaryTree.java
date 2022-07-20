@@ -54,6 +54,18 @@ public class AverageOfLevelsBinaryTree {
         return root.val==1;
 
     }
+    public static TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
+        if(root1==null&&root2==null)
+            return null;
+        if(root1==null)
+            return root2;
+        if(root2==null)
+            return root1;
+        TreeNode new_node=new TreeNode(root1.val+root2.val);
+        new_node.left=mergeTrees(root1.left,root2.left);
+        new_node.right=mergeTrees(root1.right,root2.right);
+        return new_node;
+    }
     public static void main(String args[])
       {
 
