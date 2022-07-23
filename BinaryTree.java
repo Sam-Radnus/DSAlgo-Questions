@@ -1,10 +1,11 @@
 class Node{
-   int key;
+   int key,height;
    Node left,right;
    Node(int item)
    {
        key=item;
        left=right=null;
+       height=0;
    }
 }
 public class BinaryTree {
