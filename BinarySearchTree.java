@@ -1,3 +1,4 @@
+import java.util.*;
 public class BinarySearchTree {
     static class Node{
         int data;
@@ -48,9 +49,28 @@ public class BinarySearchTree {
         System.out.print(root.data+" ");
         inorderTraversal(root.right);
     }
+    public TreeNode increasingBST(TreeNode root) {
+          List<Integer>vals=new ArrayList<>();
+          inorder(root,vals);
+          TreeNode ans=new TreeNode(0),cur=ans;
+          for(int v:vals)
+          {
+              cur.right=new TreeNode(v);
+              cur=cur.right;
+          }
+          return ans.right;
+    }
+    public void inorder(TreeNode node,List<Integer>vals)
+    {
+        if(node==null)
+            return;
+        inorder(node.left,vals);
+        vals.add(node.val);
+        inorder(node.right,vals);
+    }
     public static void main(String args[])
     {
-        int arr[]={7,4,12,3,6,8,1,5,10};
+        int arr[]={5,3,6,2,4,8,1,7,9};
         Node root=constructBST(arr,arr.length);
         System.out.print("InorderTraversal"+":");
         inorderTraversal(root);
