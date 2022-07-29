@@ -64,13 +64,14 @@ public class BinarySearchTree {
     {
         if(node==null)
             return;
+
         inorder(node.left,vals);
-        vals.add(node.val);
         inorder(node.right,vals);
+        vals.add(node.val);
     }
     public static void main(String args[])
     {
-        int arr[]={5,3,6,2,4,8,1,7,9};
+        int arr[]={-10,-3,0,9,6};
         Node root=constructBST(arr,arr.length);
         System.out.print("InorderTraversal"+":");
         inorderTraversal(root);
