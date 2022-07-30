@@ -1,6 +1,6 @@
 public class SortedArrayToBinaryTree {
     public TreeNode sortedArrayToBST(int nums[]){
-        helper(nums,0,nums.length-1);
+        return helper(nums,0,nums.length-1);
     }
     public TreeNode helper(int nums[],int left,int right)
     {

@@ -71,7 +71,7 @@ public class BinarySearchTree {
     }
     public static void main(String args[])
     {
-        int arr[]={-10,-3,0,9,6};
+        int arr[]={6,2,8,0,4,7,9,3,5};
         Node root=constructBST(arr,arr.length);
         System.out.print("InorderTraversal"+":");
         inorderTraversal(root);
