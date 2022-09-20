@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.LinkedList;
 public class BreadthFirstSearch {
     private int V;
     private LinkedList<Integer>adj[];
