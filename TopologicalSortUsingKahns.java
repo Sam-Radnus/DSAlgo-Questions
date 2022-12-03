@@ -16,6 +16,7 @@ class Graphs{
    }
    public void TopologicalSort()
    {
+
        int indegree[]=new int[V];
        for(int i=0;i<V;i++){
            for(int node:adj[i])
@@ -23,7 +24,7 @@ class Graphs{
                indegree[node]++;
            }
        }
-       Queue<Integer>q=new LinkedList<Integer>();
+       Queue<Integer>q=new LinkedList();
        for(int i=0;i<V;i++)
        {
            if(indegree[i]==0)

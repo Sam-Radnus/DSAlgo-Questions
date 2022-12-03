@@ -1,4 +1,5 @@
-class Solution {
+import java.util.*;
+class Solution2 {
     public List<List<String>> partition(String s) {
         int len=s.length();
         boolean dp[][]=new boolean[len][len];

@@ -1,4 +1,7 @@
+
+/*
 public class WordBreak {
+
     public boolean wordBreak(String s, List<String> wordDict) {
         HashMap<String,Boolean>map=new HashMap<>();
         return helper(s,map,wordDict);
@@ -30,3 +33,4 @@ public class WordBreak {
         return false;
     }
 }
+*/
