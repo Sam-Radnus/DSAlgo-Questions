@@ -1,36 +1,19 @@
-
-/*
-public class WordBreak {
-
+class Solution {
     public boolean wordBreak(String s, List<String> wordDict) {
-        HashMap<String,Boolean>map=new HashMap<>();
-        return helper(s,map,wordDict);
-    }
-    public boolean helper(String target,HashMap<String,Boolean>map,List<String> wordDict)
-    {
-        if(map.containsKey(target))
+        int n=s.length();
+        boolean canBreak[]=new boolean[n+1];
+        canBreak[n]=true;
+        for(int i=n-1;i>=0;i--)
         {
-            return map.get(target);
-        }
-
-        if(target.isEmpty())
-        {
-            return true;
-        }
-        for(String word:wordDict)
-        {
-            if(target.startsWith(word))
+            for(int j=i+1;j<=n;j++)
             {
-                System.out.println(word);
-                if(helper(target.substring(word.length()),map,wordDict))
+                if(canBreak[j] && wordDict.contains(s.substring(i,j)))
                 {
-                    map.put(target,true);
-                    return true;
+                    canBreak[i]=true;
+                    break;
                 }
             }
         }
-        map.put(target,false);
-        return false;
+        return canBreak[0];
     }
 }
-*/
