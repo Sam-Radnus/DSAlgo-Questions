@@ -1,0 +1,36 @@
+class Temperature{
+    int index;
+    int temp;
+    Temperature(int index,int temp){
+        this.index=index;
+        this.temp=temp;
+    }
+}
+class Solution {
+    public int[] dailyTemperatures(int[] temperatures) {
+        PriorityQueue<Temperature>pq=new PriorityQueue<>((a,b)->(a.index-b.index));
+        int n=temperatures.length;
+        int ans[]=new int[n];
+        for(int i=n-1;i>=0;i--){
+            if(pq.size()==0){
+                ans[i]=0;
+                pq.add(new Temperature(i,temperatures[i]));
+            }
+            else{
+                while(pq.size()>0 && pq.peek().temp<=temperatures[i]){
+                    pq.poll();
+                }
+                if(pq.size()!=0){
+                   Temperature t=pq.peek();
+                   int next=t.index-i;
+                   ans[i]=next;
+                }
+                else{
+                    ans[i]=0;
+                }
+                pq.add(new Temperature(i,temperatures[i]));
+            }
+        }
+        return ans;
+    }
+}
